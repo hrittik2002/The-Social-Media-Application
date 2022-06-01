@@ -1,11 +1,14 @@
 import "./topbar.css"
+import {Link} from 'react-router-dom';
 import {Search,Person,Chat,Notifications} from "@mui/icons-material" 
 function Topbar() {
   return (
     <div className="topbarContainer">
 
         <div className="topbarLeft">
+        <Link to='/' style={{textDecoration:"none"}}>
           <span className="logo">HGSocial</span>
+        </Link>
         </div>
 
         <div className="topbarCenter">
