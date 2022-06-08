@@ -66,7 +66,7 @@
 import axios from "axios";
 import { useRef } from "react";
 import "./register.css";
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 
 export default function Register() {
@@ -137,7 +137,9 @@ export default function Register() {
             <button className="loginButton" type="submit">
               Sign Up
             </button>
-            <button className="loginRegisterButton">Log into Account</button>
+            <Link className="loginLink" style={{ textDecoration: 'none' }} to="/login">
+              <button className="loginRegisterButton" style={{width:"100%"}}>Log into Account</button>
+            </Link>
           </form>
         </div>
       </div>

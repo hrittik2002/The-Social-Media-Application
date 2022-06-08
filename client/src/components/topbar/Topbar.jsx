@@ -1,12 +1,18 @@
 import "./topbar.css"
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { Search, Person, Chat, Notifications } from "@mui/icons-material"
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext"
 function Topbar() {
 
   const { user } = useContext(AuthContext)
   const PF = process.env.REACT_APP_PUBLIC_FORLDER;
+
+  const logout = () =>{
+    localStorage.removeItem("user")
+    window.location.reload();
+  }
+  
     return(
       <div className="topbarContainer">
 
@@ -25,8 +31,7 @@ function Topbar() {
 
         <div className="topbarRight">
           <div className="topbarLinks">
-            <span className="topbarLink">Homepage</span>
-            <span className="topbarLink">TimeLine</span>
+            <button onClick={logout}>Logout</button>
           </div>
           <div className="topbarIcons">
             <div className="topbarIconItem">
